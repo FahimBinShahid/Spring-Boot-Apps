@@ -1,0 +1,6 @@
+com\example\springbootWithPostgresql\entity\UserEntity.class
+com\example\springbootWithPostgresql\service\UserService.class
+com\example\springbootWithPostgresql\service\impl\UserServiceImpl.class
+com\example\springbootWithPostgresql\repository\UserRepository.class
+com\example\springbootWithPostgresql\SpringbootWithPostgresqlApplication.class
+com\example\springbootWithPostgresql\controller\UserController.class
