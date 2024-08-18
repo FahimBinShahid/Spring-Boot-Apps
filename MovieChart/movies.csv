@@ -1,0 +1,22 @@
+"id","description","director","genre","rating","rating_type","release_date","runtime","title","year"
+1,"A mind-bending thriller","Christopher Nolan","Sci-Fi",8,"IMDB","2010-07-16",148,"Inception",2010
+2,"The story of a powerful crime family.","Francis Coppola","Crime",9,"IMDB","1972-03-24",175,"The Godfather",1972
+3,"The story of a powerful crime family.","Francis Ford Coppola","Crime",8,"IMDB","1972-03-24",175,"The Godfather",1972
+4,"The lives of two mob hitmen, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.","Quentin Tarantino","Crime",7,"IMDB","1994-10-14",154,"Pulp Fiction",1994
+5,"Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.","Frank Darabont","Drama",8,"IMDB","1994-09-23",142,"The Shawshank Redemption",1994
+6,"The presidencies of Kennedy and Johnson, the events of Vietnam, the Watergate scandal, and other historical events unfold from the perspective of an Alabama man with an extraordinary history of his own.","Robert Zemeckis","Drama",6,"IMDB","1994-07-06",142,"Forrest Gump",1994
+7,"The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.","Francis Ford Coppola","Crime",5,"IMDB","1972-03-24",175,"The Godfather",1972
+8,"The early life and career of Vito Corleone in 1920s New York is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate.","Francis Ford Coppola","Crime",8,"IMDB","1974-12-20",202,"The Godfather Part II",1974
+9,"A young FBI cadet must confide in an incarcerated and manipulative killer to receive his help on catching another serial killer who skins his victims.","Jonathan Demme","Thriller",4,"IMDB","1991-02-14",118,"The Silence of the Lambs",1991
+10,"Two detectives hunt a serial killer who uses the seven deadly sins as his modus operandi.","David Fincher","Crime",4,"IMDB","1995-09-22",127,"Se7en",1995
+11,"One Hero.","David Fincher","Action",9,"IMDB","1995-09-22",130,"Shajam",2017
+12,"An FBI trainee seeks the help of a cannibalistic serial killer.","Jonathan Demme","Thriller",8,"IMDB","1991-02-14",118,"The Silence of the Lambs",1991
+13,"A man with short-term memory loss seeks revenge.","Christopher Nolan","Mystery",8,"IMDB","2001-03-16",113,"Memento",2000
+14,"A freed slave seeks to rescue his wife.","Quentin Tarantino","Western",8,"IMDB","2012-12-25",165,"Django Unchained",2012
+15,"A freed slave seeks to rescue his wife.","XYZ","Indian",8,"IMDB","2023-12-25",165,"Toofan",2023
+16,"A stockbroker rises and falls in a life of excess.","Martin Scorsese","Biography",8,"IMDB","2013-12-25",180,"The Wolf of Wall Street",2013
+17,"A post-apocalyptic road battle for survival.","George Miller","Action",8,"IMDB","2015-05-15",120,"Mad Max: Fury Road",2015
+18,"James Bond faces a personal threat.","Sam Mendes","Action",6,"IMDB","2012-10-26",143,"Skyfall",2012
+19,"The epic continuation of the Dune saga.","Denis Villeneuve","Sci-Fi",9,"IMDB","2024-03-15",155,"Dune: Part Two",2024
+20,"A true-crime drama about the Osage murders.","Martin Scorsese","Crime",8,"IMDB","2024-04-19",160,"Killers of the Flower Moon",2024
+21,"The Marvel Cinematic Universe continues with a new adventure.","Nia DaCosta","Action",8,"IMDB","2024-07-12",130,"The Marvels",2024

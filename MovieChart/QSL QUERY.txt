@@ -1,0 +1,10 @@
+DELETE FROM movies WHERE id = 0;
+ALTER TABLE your_table_name
+ALTER COLUMN rating TYPE integer USING rating::integer;
+SELECT DISTINCT rating FROM movies;
+SELECT * FROM movies
+ORDER BY rating DESC;
+ALTER COLUMN rating TYPE integer USING rating::integer;
+ALTER TABLE IF EXISTS movies
+ALTER COLUMN rating SET DATA TYPE integer
+USING rating::integer;
