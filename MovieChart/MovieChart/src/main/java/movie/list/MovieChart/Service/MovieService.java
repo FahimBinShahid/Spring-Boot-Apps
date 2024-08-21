@@ -1,37 +1,23 @@
 package movie.list.MovieChart.Service;
-
-import movie.list.MovieChart.Model.Movies;
-import movie.list.MovieChart.Model.Rating;
+import movie.list.MovieChart.Model.Entities.Movies;
 import movie.list.MovieChart.Repository.MovieRepository;
-import movie.list.MovieChart.Repository.RatingRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-
-import java.util.Comparator;
 import java.util.List;
 import java.util.NoSuchElementException;
 
 @Service
 public class MovieService {
 
+    private final MovieRepository movieRepository;
 
-
-    @Autowired
-    private MovieRepository movieRepository;
-
-    public MovieService(RatingRepository ratingRepository) {
+    public MovieService(MovieRepository movieRepository) {
+        this.movieRepository = movieRepository;
     }
 
     public List<Movies> getMoviesSortedByRating() {
-        List<Movies> movies = movieRepository.findAll();
-
-        Comparator<Movies> ratingComparator = Comparator.comparingInt(Movies::getRating).reversed();
-
-        movies.sort(ratingComparator);
-
-        return movies;
+        return movieRepository.findAll(Sort.by(Sort.Order.desc("rating")));
     }
-
 
     public List<Movies> getAllMovies() {
         return movieRepository.findAll();
@@ -42,14 +28,25 @@ public class MovieService {
                 .orElseThrow(() -> new NoSuchElementException("Movie not found with id " + id));
     }
 
-
     public void addMovie(Movies movie) {
         movieRepository.save(movie);
     }
 
-
     public void updateMovie(int id, Movies movieDetails) {
         Movies movie = getMovieById(id);
+        updateMovieDetails(movie, movieDetails);
+        movieRepository.save(movie);
+    }
+
+    public void deleteMovie(int id) {
+        if (movieRepository.existsById(id)) {
+            movieRepository.deleteById(id);
+        } else {
+            throw new NoSuchElementException("Movie not found with id " + id);
+        }
+    }
+
+    private void updateMovieDetails(Movies movie, Movies movieDetails) {
         movie.setTitle(movieDetails.getTitle());
         movie.setGenre(movieDetails.getGenre());
         movie.setDirector(movieDetails.getDirector());
@@ -59,14 +56,5 @@ public class MovieService {
         movie.setRating(movieDetails.getRating());
         movie.setReleaseDate(movieDetails.getReleaseDate());
         movie.setRatingType(movieDetails.getRatingType());
-        movieRepository.save(movie);
     }
-
-
-    public void deleteMovie(int id) {
-        Movies movie = getMovieById(id);
-        movieRepository.delete(movie);
-    }
-
-
 }

@@ -1,10 +1,8 @@
 package movie.list.MovieChart.Repository;
-
-import movie.list.MovieChart.Model.Rating;
+import movie.list.MovieChart.Model.Entities.Rating;
 import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
 
-
-    public interface RatingRepository extends JpaRepository<Rating, Integer> {
-    }
-
-
+public interface RatingRepository extends JpaRepository<Rating, Integer> {
+    List<Rating> findByMovieId(int movieId);
+}
