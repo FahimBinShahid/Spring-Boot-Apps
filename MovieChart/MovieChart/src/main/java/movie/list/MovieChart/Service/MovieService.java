@@ -3,6 +3,8 @@ import movie.list.MovieChart.Model.Entities.Movies;
 import movie.list.MovieChart.Repository.MovieRepository;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+
+import java.util.Comparator;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -16,7 +18,10 @@ public class MovieService {
     }
 
     public List<Movies> getMoviesSortedByRating() {
-        return movieRepository.findAll(Sort.by(Sort.Order.desc("rating")));
+        List<Movies> movies = movieRepository.findAll();
+        movies.sort(Comparator.comparingDouble(Movies::getAverageRating).reversed());
+
+        return movies;
     }
 
     public List<Movies> getAllMovies() {
@@ -53,7 +58,6 @@ public class MovieService {
         movie.setYear(movieDetails.getYear());
         movie.setRuntime(movieDetails.getRuntime());
         movie.setDescription(movieDetails.getDescription());
-        movie.setRating(movieDetails.getRating());
         movie.setReleaseDate(movieDetails.getReleaseDate());
         movie.setRatingType(movieDetails.getRatingType());
     }

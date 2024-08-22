@@ -69,4 +69,17 @@ public class RatingService {
         return ratingRepository.findById(ratingId)
                 .orElseThrow(() -> new ResourceNotFoundException("Rating with ID " + ratingId + " not found."));
     }
+
+    public double calculateAverageRating(int movieId) {
+        List<Rating> ratings = getRatingsByMovie(movieId);
+        double sumOfRating = 0;
+//        for (Rating rating : ratings) {
+//            sumOfRating = sumOfRating + rating.getRating();
+//        }
+        for (Rating rating : ratings) {
+            sumOfRating = sumOfRating + rating.getRating();
+        }
+        return sumOfRating / ratings.size();
+    }
+
 }

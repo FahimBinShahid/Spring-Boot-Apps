@@ -33,12 +33,14 @@ public class MoviesController {
 
     @GetMapping("/sorted-by-rating")
     public ResponseEntity<List<Movies>> getMoviesSortedByRating() {
-        return new ResponseEntity<>(movieService.getMoviesSortedByRating(), HttpStatus.OK);
+        List<Movies> movies = movieService.getMoviesSortedByRating();
+        return new ResponseEntity<>(movies, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Movies> getMovieById(@PathVariable int id) {
-        return new ResponseEntity<>(movieService.getMovieById(id), HttpStatus.OK);
+        Movies movie = movieService.getMovieById(id);
+        return new ResponseEntity<>(movie, HttpStatus.OK);
     }
 
     @PostMapping
@@ -71,10 +73,12 @@ public class MoviesController {
         return new ResponseEntity<>(ratings, HttpStatus.OK);
     }
 
+
     @GetMapping("/{id}/ratings/{ratingId}")
     public ResponseEntity<Rating> getRatingByMovieId(@PathVariable int id, @PathVariable int ratingId) {
         return ResponseEntity.ok(ratingService.getRatingById(id, ratingId));
     }
+
 
     @PutMapping("/{id}/ratings/{ratingId}")
     public ResponseEntity<Rating> updateRating(@PathVariable int id, @PathVariable int ratingId, @RequestBody RatingUpdateRequest ratingUpdateRequest) {
@@ -82,9 +86,17 @@ public class MoviesController {
         return ResponseEntity.ok(updatedRating);
     }
 
+
     @DeleteMapping("/{id}/ratings/{ratingId}")
     public ResponseEntity<Void> deleteRating(@PathVariable int id, @PathVariable int ratingId) {
         ratingService.deleteRating(ratingId);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/{id}/average-rating")
+    public ResponseEntity<Double> getAverageRating(@PathVariable int id) {
+        return new ResponseEntity<>(ratingService.calculateAverageRating(id), HttpStatus.OK);
+    }
+
+
 }

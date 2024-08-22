@@ -17,27 +17,29 @@ import java.time.LocalDateTime;
     @AllArgsConstructor
     public class Rating {
 
-            @Id
-            @GeneratedValue(strategy = GenerationType.IDENTITY)
-            private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
-            private int rating;
+    private int rating;
 
-            private String reviewer;
+    private String reviewer;
 
-            @CreationTimestamp
-            private LocalDateTime ratedAt;
+    @CreationTimestamp
+    private LocalDateTime ratedAt;
 
-            @UpdateTimestamp
-            private LocalDateTime updatedAt;
+    @UpdateTimestamp
+    private LocalDateTime updatedAt;
 
-            @ManyToOne
-            @JsonBackReference
-            @JoinColumn(name = "movie_id")
-            private Movies movie;
+    @ManyToOne
+    @JsonBackReference
+    @JoinColumn(name = "movie_id")
+    private Movies movie;
 
 
-
+    public double getRatingValue() {
+        return this.rating;
     }
+}
 
 

@@ -15,7 +15,6 @@ import java.util.List;
 public class Movies {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private int id;
 
     private String title;
@@ -23,7 +22,6 @@ public class Movies {
     private String director;
     private int year;
     private int runtime;
-    private int rating;
     private String description;
     private String releaseDate;
     private String ratingType;
@@ -31,4 +29,11 @@ public class Movies {
     @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<Rating> ratings;
+
+    public double getAverageRating() {
+        return ratings.stream()
+                .mapToDouble(Rating::getRatingValue)
+                .average()
+                .orElse(0.0);
+    }
 }
