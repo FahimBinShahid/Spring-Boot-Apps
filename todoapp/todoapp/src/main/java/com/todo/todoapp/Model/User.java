@@ -1,13 +1,8 @@
 package com.todo.todoapp.Model;
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Entity

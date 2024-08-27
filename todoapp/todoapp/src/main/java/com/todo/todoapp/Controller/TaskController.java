@@ -14,7 +14,6 @@ public class TaskController {
 
     public TaskController(TaskService taskService) {
         this.taskService = taskService;
-
     }
 
     @GetMapping
@@ -29,7 +28,8 @@ public class TaskController {
 
     @PostMapping
     public ResponseEntity<Task> createTask(@RequestBody Task task) {
-        return new ResponseEntity<>(taskService.saveTask(task), HttpStatus.CREATED);
+        taskService.saveTask(task);
+        return new ResponseEntity<>(task, HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")

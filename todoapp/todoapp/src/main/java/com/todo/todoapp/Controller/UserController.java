@@ -18,11 +18,9 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping
+    @GetMapping("/users/taskId")
     public ResponseEntity<List<User>> getUsers(@PathVariable Long taskId) {
-        List<User> users = userService.getUsersByTaskId(taskId);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-
+        return new ResponseEntity<>(userService.getUsersByTaskId(taskId), HttpStatus.OK);
     }
 
     @GetMapping("/user/{userId}")

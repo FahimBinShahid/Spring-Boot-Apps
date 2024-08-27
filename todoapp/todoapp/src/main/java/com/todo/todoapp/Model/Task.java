@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import org.hibernate.annotations.CurrentTimestamp;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -28,6 +29,7 @@ public class Task {
     @CreationTimestamp
     private Date createDate;
 
+    @CurrentTimestamp
     private Date dueDate;
 
     @JsonManagedReference
